@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        Random random=new Random();
+        while(true){
+        int n=random.nextInt(100);
+        while(true){
+            System.out.println("Guess a number");
+            int num=sc.nextInt();
+            if(num==n){
+                System.out.println("The guessed number is correct");
+                break;
+            }
+            else if(num>n){
+                System.out.println("The guessed number is greater than the generated number");
+            }
+            else{
+                System.out.println("The guessed number is less than the generated number");
+            }
+        }
+        System.out.println("Do you want to play again ?(YES/NO)");
+        String str=sc.next().toLowerCase();
+        if(str.equals("no")){
+            break;
+        }
+        }
+    }
+}
