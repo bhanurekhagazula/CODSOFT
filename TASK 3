@@ -1,0 +1,62 @@
+import java.util.Scanner;
+class BankAccount {
+    double balance;
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance=balance-amount;
+            System.out.println("Withdrawal successful! Balance in the account :"+balance);
+        } else {
+            System.out.println("Insufficient balance or invalid amount. Please try again.");
+        }
+    }
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposit successful! Balance in the account :"+balance);
+        } else {
+            System.out.println("Invalid amount. Please try again.");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000.00); 
+        Scanner sc = new Scanner(System.in);
+        int ch;
+        while(true) {
+            System.out.println("Welcome to the ATM!");
+            System.out.println("1. Deposit");
+            System.out.println("2. Withdraw");
+            System.out.println("3. Check Balance");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.print("Enter the amount to deposit: ");
+                    double deposit=sc.nextDouble();
+                    account.deposit(deposit);
+                    break;
+                case 2:
+                    System.out.print("Enter the amount to withdraw: ");
+                    double withdraw=sc.nextDouble();
+                    account.withdraw(withdraw);
+                    break;
+                case 3:
+                    System.out.println("Your current balance is: $" + account.getBalance());
+                    break;
+                case 4:
+                    System.out.println("Exiting the Process");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+}
