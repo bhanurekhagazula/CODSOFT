@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter 3 subject Marks");
+        int maths=sc.nextInt();
+        int english=sc.nextInt();
+        int science=sc.nextInt();
+        int sum=maths+english+science;
+        System.out.println("TOTAL MARKS OBTAINED : "+sum);
+        int avg=sum/3;
+        System.out.println("AVERAGE MARKS : "+avg);
+        if(avg>90){
+            System.out.println("O");
+        }
+        else if(avg>80 && avg<91){
+            System.out.println("GRADE : A");
+        }
+        else if(avg>70 && avg<81){
+            System.out.println("GRADE : B");
+        }
+        else if(avg>60 && avg<71){
+            System.out.println("GRADE : C");
+        }
+        else if(avg>50 && avg<61){
+            System.out.println("GRADE : D");
+        }
+        else if(avg>40 && avg<51){
+            System.out.println("GRADE : E");
+        }
+        else{
+            System.out.println("FAIL");
+        }
+    }
+}
